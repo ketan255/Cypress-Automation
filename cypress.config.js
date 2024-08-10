@@ -23,10 +23,11 @@ async function setupNodeEvents(on, config) {
 module.exports = defineConfig({
   e2e: {
     setupNodeEvents,
-    specPattern: "cypress/e2e/features/*.feature",
-    baseUrl: "https://www.saucedemo.com",
+    specPattern: "cypress/e2e/features/function.feature",
+    baseUrl: "https://www.amazon.in/",
     chromeWebSecurity: false,
     env: {
+      "pageLoadTimeout": 100000,
       allureReuseAfterSpec: true,
     },
   },

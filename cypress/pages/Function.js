@@ -14,6 +14,7 @@ class Function {
   productprice: ()=>cy.get(".a-size-medium.a-color-base.sc-price.sc-white-space-nowrap.sc-product-price.a-text-bold"),
   subtotal: ()=>cy.get("span[id='sc-subtotal-amount-activecart'] span[class='a-size-medium a-color-base sc-price sc-white-space-nowrap']"),
   delete: ()=>cy.get("input[value='Delete']"),
+  refresh: ()=>cy.get('a > #attach-string-cart-try-again'),
   cartempty: ()=>cy.get(".a-spacing-mini.a-spacing-top-base"),
 
     };
@@ -44,6 +45,7 @@ class Function {
       });
       cy.wait(7000);
       this.elements.addtocart().click(); cy.wait(10000);
+      this.elements.refresh().click();
       this.elements.cartbtn().click(); cy.wait(5000);
       this.elements.shoppingtxt().should("contain.text","Shopping Cart");  
     }
